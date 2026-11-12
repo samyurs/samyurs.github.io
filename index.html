@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Software engineering portfolio of Samyukhtha Rajkumar Sridevi, UCLA Computer Science graduate.">
+  <meta name="theme-color" content="#262841">
+  <title>Samyukhtha R.S. — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #262841; --ink: #272941; --paper: #fcf9fc; --lime: #f4d8ed;
+      --muted: #48495e; --line: #dcd5e4; --serif: "Instrument Serif", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.55 "DM Sans", system-ui, sans-serif; }
+    a { color: inherit; text-underline-offset: .25em; }
+    a:focus-visible { outline: 3px solid #8f6bd8; outline-offset: 5px; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1, h2, h3 { font: 400 1em/.97 var(--serif); }
+    .wrap { width: min(1160px, calc(100% - 3rem)); margin-inline: auto; }
+    .mast { background: var(--forest); color: var(--paper); }
+    .bar, nav, .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.15rem; }
+    .bar { justify-content: space-between; border-bottom: 1px solid #ffffff38; padding-block: 1rem; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; font-weight: 700; text-decoration: none; }
+    .monogram { display: grid; place-items: center; border-radius: 50%; background: var(--lime); color: var(--forest); width: 2.25rem; height: 2.25rem; font: 1.2rem var(--serif); }
+    nav a { text-decoration: none; font-size: .9rem; }
+    nav a:hover, .project-link:hover { text-decoration: underline; }
+    .hero { position: relative; isolation: isolate; padding-block: clamp(4rem, 10vw, 8rem); overflow: hidden; }
+    .hero::after { content: ""; position: absolute; z-index: -1; top: -42%; left: 62%; width: 68%; aspect-ratio: 1; border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 28px, #d8ed8e24 29px 30px, transparent 31px 47px); mask-image: linear-gradient(110deg,transparent,#000 72%); }
+    .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .hero .eyebrow { color: var(--lime); }
+    h1 { margin-block: .2em .19em; font-size: clamp(3.6rem, 9vw, 8.4rem); letter-spacing: -.035em; }
+    h1 em { display: block; color: var(--lime); font-weight: 400; }
+    .intro { color: #e3e9df; max-width: 35rem; font-size: clamp(1.05rem, 2vw, 1.25rem); }
+    .actions { margin-top: 1.65rem; }
+    .button { display: inline-flex; align-items: center; gap: .75rem; padding: .7rem 1.1rem; border-radius: 99px; background: var(--lime); color: var(--forest); text-decoration: none; font-weight: 700; }
+    .button:hover { background: #fceaf8; }
+    section { scroll-margin-top: 1.5rem; }
+    .work { padding-block: clamp(3.3rem, 7vw, 6rem); }
+    .section-title { margin-bottom: 1.65rem; font-size: clamp(3rem, 7vw, 5.75rem); letter-spacing: -.035em; }
+    .feature { display: grid; grid-template-columns: .7fr 1.3fr; background: #e9f2e9; border-radius: 1rem; overflow: hidden; }
+    .feature-copy, .card-copy { padding: clamp(1.4rem, 3.4vw, 2.75rem); }
+    .feature-copy { align-self: center; }
+    .feature h3, .card h3, .experience h3 { font-size: clamp(2.25rem, 4vw, 3.45rem); margin-block: .3em .22em; }
+    .feature p:not(.eyebrow), .card p:not(.eyebrow), .experience p:not(.eyebrow) { color: var(--muted); }
+    .project-link { display: inline-block; margin-top: 1.1rem; font-weight: 700; }
+    .website { display: grid; place-items: center; min-width: 0; padding: clamp(1rem, 4vw, 3.1rem); background: #d2e5d7; }
+    .browser { width: 100%; border: 1px solid #283b2c50; border-radius: .7rem; overflow: hidden; box-shadow: 0 12px 35px #25332228; background: white; }
+    .browser figcaption { padding: .4rem .8rem; background: #fafbf4; color: #495748; font-size: .72rem; }
+    .browser img { width: 100%; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.1rem; margin-top: 1.1rem; }
+    .card { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 1rem; overflow: hidden; }
+    .card-copy { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+    .card-copy .project-link { margin-top: auto; padding-top: 1rem; }
+    .art { height: 15rem; overflow: hidden; display: grid; justify-items: center; align-items: start; }
+    .art.bites { place-items: center; padding: 1rem; background: radial-gradient(ellipse at center, #f5f2ff, #e7d6f3); }
+    .art.nav { place-items: center; padding: 1rem; background: radial-gradient(ellipse at center, #eef7ff, #b6d4e9); }
+    .art img { width: min(49%, 160px); margin-top: 1.25rem; border-radius: 1.15rem; border: .25rem solid #202b2a; box-shadow: 0 12px 25px #1c2e3540; }
+    .art.bites img { width: min(100%, 400px); max-height: 100%; object-fit: contain; margin: 0; border: 0; border-radius: .65rem; }
+    .art.nav img { width: min(57%, 190px); max-height: 100%; object-fit: contain; margin: 0; border: 0; border-radius: 0; box-shadow: none; mix-blend-mode: multiply; }
+    .dungeon { align-content: center; text-align: center; gap: .6rem; color: #ebdcff; background: radial-gradient(ellipse at center, #503960, #272131 78%); }
+    .dungeon strong { font: italic 400 clamp(2.15rem, 4vw, 3.6rem)/.92 var(--serif); }
+    .dungeon span { font-size: .73rem; letter-spacing: .14em; text-transform: uppercase; }
+    .experience { border-top: 1px solid var(--line); display: grid; grid-template-columns: .65fr 1.35fr; gap: 2rem; padding-block: clamp(3rem, 6vw, 5rem); }
+    .experience h3 { margin-top: 0; }
+    .experience p:last-child { max-width: 41rem; margin-top: .65rem; }
+    .contact { background: var(--forest); color: var(--paper); padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+    .contact .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+    .contact h2 { font-size: clamp(2.6rem, 5vw, 4.5rem); color: var(--lime); }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (max-width: 620px) {
+      .wrap { width: calc(100% - 2rem); }
+      .feature, .grid, .experience { grid-template-columns: 1fr; }
+      .experience { gap: .5rem; }
+      .bar, nav { gap: .65rem 1rem; }
+      .hero::after { left: 42%; width: 100%; }
+    }
+    .skip { position: absolute; top: .75rem; left: 1rem; z-index: 2; transform: translateY(-200%); }
+    .skip:focus { transform: none; }
+    .mast { background: linear-gradient(120deg, #e4efff, #eee6ff 58%, #fbe8f2); color: var(--forest); }
+    .bar { border-color: #52517833; }
+    .monogram, .mast .button { background: var(--forest); color: var(--paper); }
+    .mast .button:hover { background: #46436c; }
+    .hero { padding-block: clamp(3.75rem, 8vw, 6.5rem); }
+    .hero::after { display: none; }
+    .hero-layout { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: clamp(1.6rem, 6vw, 5rem); }
+    .hero .eyebrow { color: #43476b; }
+    h1 { font-size: clamp(3.45rem, 6.7vw, 6.75rem); }
+    h1 em { color: #63498f; }
+    .intro { color: var(--muted); }
+    .hero-art { position: relative; aspect-ratio: 1.2; display: grid; align-items: center; padding: 0 8% 10% 0; }
+    .hero-art .browser { transform: rotate(-5deg); }
+    .hero-art .sticker { position: absolute; width: 34%; right: 0; bottom: 1%; padding: 6%; border-radius: 1.1rem; background: #f8dced; box-shadow: 0 8px 25px #25332230; transform: rotate(10deg); }
+    .sticker img { mix-blend-mode: multiply; }
+    .section-lead { margin: -.95rem 0 1.65rem; color: var(--muted); max-width: 58ch; }
+    .role { margin-bottom: .5rem; font-size: .83rem; font-weight: 700; }
+    .card .role { color: var(--ink); }
+    .card { background: #ffffff; }
+    .art.bites { padding: .75rem; }
+    .art.bites img { box-shadow: 0 5px 16px #2533222b; }
+    .art.nav img { width: min(55%, 165px); }
+    .contact h2 { margin-bottom: .25em; }
+    @media (max-width: 760px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-art { width: min(100%, 360px); margin-inline: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body id="top">
+  <a class="skip button" href="#work">Skip to work</a>
+  <header class="mast">
+    <div class="bar wrap">
+      <a class="brand" href="#top"><span class="monogram" aria-hidden="true">S.</span>Samyukhtha R.S.</a>
+      <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+    </div>
+    <div class="hero">
+      <div class="wrap hero-layout">
+        <div>
+          <p class="eyebrow">UCLA Computer Science ’26</p>
+          <h1>Hi, I’m Samyukhtha <em>Rajkumar Sridevi.</em></h1>
+          <p class="intro">I’m a software engineer. I’ve built a website for a youth education nonprofit, led teams building campus apps, and worked on connecting language models to tools and databases.</p>
+          <div class="actions">
+            <a class="button" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+            <a href="https://github.com/samyurs">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/samyukhtha-rs">LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <figure class="browser"><figcaption>jointrust.org</figcaption><img src="trust-preview.jpg" alt=""></figure>
+          <div class="sticker"><img src="bruinnav.jpg" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="work" id="work" aria-labelledby="work-title">
+      <h2 class="section-title" id="work-title">Selected work</h2>
+      <p class="section-lead">A website I built on my own, two campus apps I led, and a game that connects Roblox to a local model.</p>
+      <article class="feature">
+        <div class="feature-copy">
+          <p class="eyebrow">Live website · Sole builder</p>
+          <h3>TRUST<br>Learn For Life</h3>
+          <p>I built TRUST’s public website so students, volunteers, and partners can explore workshops, find a chapter, and get involved.</p>
+          <a class="project-link" href="https://jointrust.org/">Visit the TRUST site ↗</a>
+        </div>
+        <div class="website">
+          <figure class="browser"><figcaption>jointrust.org</figcaption><img src="trust-preview.jpg" alt="The live TRUST homepage and its youth education message"></figure>
+        </div>
+      </article>
+      <div class="grid">
+        <article class="card">
+          <figure class="art bites"><img src="bruinbites.jpg" alt="Three BruinBites screens showing account settings, a community profile, and saved deals" loading="lazy"></figure>
+          <div class="card-copy">
+            <p class="eyebrow">React Native · Node.js · MongoDB</p>
+            <h3>BruinBites</h3>
+            <p class="role">Project lead · Creative Labs at UCLA</p>
+            <p>Students can find affordable food on an interactive map, share local deals and events, and generate low-cost recipes.</p>
+            <a class="project-link" href="https://github.com/samyurs/bruinbites">View frontend code ↗</a>
+          </div>
+        </article>
+        <article class="card">
+          <figure class="art nav"><img src="bruinnav.jpg" alt="Official BruinNav logo, a folded map with a bear inside a blue location pin" loading="lazy"></figure>
+          <div class="card-copy">
+            <p class="eyebrow">React Native · Google Maps API</p>
+            <h3>BruinNav</h3>
+            <p class="role">Project lead · Creative Labs at UCLA</p>
+            <p>An interactive UCLA campus map with building search and indoor floor plans to help students find their way.</p>
+            <a class="project-link" href="https://github.com/samyurs/bruin-nav">View BruinNav code ↗</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="art dungeon" aria-hidden="true"><strong>Summoners<br>Dungeon</strong><span>Roblox × local AI</span></div>
+          <div class="card-copy">
+            <p class="eyebrow">Roblox · Lua · Python · FastAPI</p>
+            <h3>Summoners Dungeon</h3>
+            <p>A game where players summon AI agents and guide them through boss encounters. A FastAPI backend connects Roblox to a local model.</p>
+            <a class="project-link" href="https://github.com/samyurs/summoners-dungeon">View game code ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience" id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
+      <div>
+        <h3>LLM at SCALE.AI</h3>
+        <p class="eyebrow">Software engineering and research internship · 2025</p>
+        <p>I worked on JSON-RPC integrations that connect language models to tools and structured data. I also co-authored a technical book on deploying Model Context Protocol servers backed by MySQL and PostgreSQL.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="contact" id="contact">
+    <div class="wrap"><div><h2>Let’s connect.</h2><p>Open to early-career software engineering roles.</p></div><a class="button" href="https://www.linkedin.com/in/samyukhtha-rs">Connect on LinkedIn ↗</a></div>
+  </footer>
+</body>
+</html>
